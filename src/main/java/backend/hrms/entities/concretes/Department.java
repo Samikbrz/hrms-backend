@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "companies")
-public class Company implements Model {
+@Table(name = "departments")
+public class Department implements Model {
 
     @Id
     @GeneratedValue
@@ -20,9 +20,9 @@ public class Company implements Model {
     @Column(name = "name")
     private String name;
 
-    public Company(){}
+    public Department(){}
 
-    public Company(int id, String name) {
+    public Department(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -42,5 +42,4 @@ public class Company implements Model {
     public void setName(String name) {
         this.name = name;
     }
-
 }

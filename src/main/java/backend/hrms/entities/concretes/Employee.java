@@ -2,7 +2,11 @@ package backend.hrms.entities.concretes;
 
 import backend.hrms.entities.abstracts.Model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "employees")
@@ -19,43 +23,17 @@ public class Employee implements Model {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "tcno")
-    private int tcno;
-
-    @Column(name = "birth_date")
-    private String birthDate;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "password_again")
-    private String password_again;
-
-    @Column(name = "location_id")
-    private int locationId;
+    @Column(name = "department_id")
+    private int departmentId;
 
     public Employee(){}
 
-    public Employee(int id, String firstName, String lastName,
-                    int tcno, String birthDate, String email,
-                    String password, String password_again,
-                    String department, int locationId) {
+    public Employee(int id, String firstName, String lastName,int departmentId) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.tcno = tcno;
-        this.birthDate = birthDate;
-        this.email = email;
-        this.password = password;
-        this.password_again = password_again;
-        this.department = department;
-        this.locationId = locationId;
+        this.departmentId=departmentId;
     }
-
-    private String department;
 
     public int getId() {
         return id;
@@ -81,60 +59,12 @@ public class Employee implements Model {
         this.lastName = lastName;
     }
 
-    public int getTcno() {
-        return tcno;
+    public int getDepartment() {
+        return departmentId;
     }
 
-    public void setTcno(int tcno) {
-        this.tcno = tcno;
-    }
-
-    public String getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPassword_again() {
-        return password_again;
-    }
-
-    public void setPassword_again(String password_again) {
-        this.password_again = password_again;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public int getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
+    public void setDepartment(int departmentId) {
+        this.departmentId = departmentId;
     }
 
 }
