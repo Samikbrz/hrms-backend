@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "employers")
-public class Employers implements Model {
+public class Employer implements Model {
 
     @Id
     @GeneratedValue
@@ -29,9 +29,9 @@ public class Employers implements Model {
     @Column(name = "company_id")
     private int companyId;
 
-    public Employers(){}
+    public Employer(){}
 
-    public Employers(int userId, String webSite, String email, String telephone, int companyId) {
+    public Employer(int userId, String webSite, String email, String telephone, int companyId) {
         this.userId = userId;
         this.webSite = webSite;
         this.email = email;
